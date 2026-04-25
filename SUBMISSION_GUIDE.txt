@@ -1,0 +1,70 @@
+SUBMISSION GUIDE - Influencer Affiliate Sales & Payment Tracking Platform
+=========================================================================
+
+DELIVERABLE 1: GitHub Repository
+----------------------------------
+URL: https://github.com/ganga061/AI-fullstack
+Status: ✅ LIVE - Contains all source code + README with screenshots
+
+
+DELIVERABLE 2: Live Demo Link
+-------------------------------
+Option A (Quick - no signup): Use localhost recording
+  → Record video of http://localhost:5173 running locally
+
+Option B (Free deploy in 10 mins):
+  Backend → Railway.app:
+    1. Go to https://railway.app
+    2. "New Project" → "Deploy from GitHub"
+    3. Select your AI-fullstack repo → select /backend folder
+    4. Add environment variable: DATABASE_URL = file:./dev.db
+    5. Copy the Railway URL (e.g. https://ai-fullstack-production.up.railway.app)
+
+  Frontend → Vercel:
+    1. Go to https://vercel.com
+    2. "Add New Project" → Import AI-fullstack repo
+    3. Set Root Directory to "frontend"
+    4. Add env var: VITE_API_URL = [your Railway URL]
+    5. Deploy → get live URL
+
+
+DELIVERABLE 3: Demo Video (5-10 mins)
+---------------------------------------
+Tool: OBS Studio (free) or Loom (browser extension)
+
+Recording steps:
+  00:00 - Show START.bat → both servers start
+  00:30 - Open http://localhost:5173 → Login page
+  01:00 - Register new Influencer account
+  02:00 - Login as Influencer → copy referral link
+  03:00 - Open referral link → click Buy Now (simulate sale)
+  04:00 - Login as Admin → show 4 charts + metrics
+  06:00 - Show AI Center (Insights + Prediction + Fraud Detection)
+  07:30 - Approve payment → show status change to PAID
+  08:30 - Switch to Influencer → confirm PAID
+  09:30 - Show GitHub repo: https://github.com/ganga061/AI-fullstack
+
+
+DELIVERABLE 4: README
+-----------------------
+File: README.md (in project root + on GitHub)
+Includes: Setup instructions, architecture diagram, API docs, screenshots
+
+
+GOOGLE DRIVE FOLDER STRUCTURE
+================================
+📁 Influencer Affiliate Sales & Payment Tracking Platform/
+├── 📄 README.md
+├── 📦 AI-fullstack-source.zip   (zip of entire project folder)
+├── 🎥 demo_video.mp4            (your screen recording)
+└── 📁 screenshots/
+    ├── login.png
+    ├── admin_dashboard.png
+    └── influencer_dashboard.png
+
+HOW TO MAKE GOOGLE DRIVE FOLDER PUBLIC:
+  1. Right-click the folder in Google Drive
+  2. Click "Share"
+  3. Click "Change to anyone with the link"
+  4. Copy the link
+  5. Submit that link
