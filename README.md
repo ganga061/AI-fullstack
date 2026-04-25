@@ -27,6 +27,9 @@ Sales are tracked when users purchase through those links
 The system calculates commissions automatically
 Admin manages and processes payments
 Influencers can view their earnings and history
+<img width="1915" height="905" alt="image" src="https://github.com/user-attachments/assets/85effec9-f05d-451b-81e3-aa7d2009b126" />
+
+
 
 #⚙️ Installation & Setup
 Clone the repository
