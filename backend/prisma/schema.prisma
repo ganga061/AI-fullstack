@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String      @id @default(uuid())
+  name          String
+  email         String      @unique
+  passwordHash  String
+  role          String      // "ADMIN" or "INFLUENCER"
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  influencer    Influencer?
+}
+
+model Influencer {
+  id             String    @id @default(uuid())
+  user           User      @relation(fields: [userId], references: [id])
+  userId         String    @unique
+  referralCode   String    @unique
+  commissionRate Float     @default(10.0) // percentage
+  clicks         Click[]
+  sales          Sale[]
+  payments       Payment[]
+}
+
+model Click {
+  id           String     @id @default(uuid())
+  influencer   Influencer @relation(fields: [influencerId], references: [id])
+  influencerId String
+  ipAddress    String?
+  timestamp    DateTime   @default(now())
+}
+
+model Sale {
+  id               String     @id @default(uuid())
+  influencer       Influencer @relation(fields: [influencerId], references: [id])
+  influencerId     String
+  amount           Float
+  commissionEarned Float
+  status           String     // "PENDING", "APPROVED"
+  date             DateTime   @default(now())
+}
+
+model Payment {
+  id           String     @id @default(uuid())
+  influencer   Influencer @relation(fields: [influencerId], references: [id])
+  influencerId String
+  amount       Float
+  status       String     // "PENDING", "PAID"
+  date         DateTime   @default(now())
+}
